@@ -1,0 +1,32 @@
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>Marcar Área</mat-card-title>
+        <!--     <mat-card-subtitle>
+              <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Buscar dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+            </mat-card-subtitle>  
+        -->          
+        </mat-card-header> 
+
+        <mat-card-content>
+            <agm-map
+            [zoom]="15"
+            [latitude]="lat"
+            [longitude]="lng"
+            (mapReady)="onMapReady($event)"
+          >
+              <agm-marker 
+              [latitude]="lat" 
+              [longitude]="lng">    
+            </agm-marker>
+          </agm-map>
+          <hr>  
+          <mat-card-title>Área Marcada: {{selectedArea}}</mat-card-title>      
+        </mat-card-content>
+       
+        <mat-card-actions *ngIf="pointList.length>0" class="display-flex">           
+            <button mat-button (click)="deleteSelectedShape()">Borrar Área</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+

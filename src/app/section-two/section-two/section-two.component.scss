@@ -1,0 +1,40 @@
+.example-card {
+  width: 100%;
+  margin-bottom: 2em;
+}
+
+
+mat-card::ng-deep.mat-card-header-text {
+  width: 100%;
+  margin:0 !important;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+
+  > div {
+      flex: 50%;
+      border-radius: 10px;
+      padding: 10px;
+      margin-right: 10px;
+  }
+  
+  > .outlook {
+      color: black;
+      background: rgba(0,0,0,0.1);
+    }
+  
+  > .temp {
+      background: lightblue;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+  }
+
+  agm-map {
+    height: 300px;
+  }

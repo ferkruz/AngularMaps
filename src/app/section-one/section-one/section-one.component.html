@@ -1,0 +1,49 @@
+<div class="container">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>Ingresar Dirección</mat-card-title>
+            <mat-card-subtitle>
+              <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()" placeholder="Buscar dirección" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+            </mat-card-subtitle>            
+        </mat-card-header>
+
+        <mat-card-content>
+          <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+            <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"></agm-marker>
+          </agm-map>
+          <hr>
+          <mat-card-title>Dirección: {{address}}</mat-card-title>
+          <p>Latitude: {{latitude}}</p>
+          <p>Longitude: {{longitude}}</p>
+        </mat-card-content>
+       
+        <mat-card-actions>
+            <button mat-button>GUARDAR</button>
+            <button mat-button>CANCELAR</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>London's weather</mat-card-title>
+    <mat-card-subtitle>Today: July 10, 2020</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="flex-row">
+        <div class="temp">
+            <span class="big-text">17 C</span>
+            <span>Feels like </span>
+            <span>12 C</span>
+        </div>
+        <div class="outlook">
+          <img src="http://openweathermap.org/img/wn/02d@2x.png" />
+          <span>Few Clouds</span>
+        </div>
+  </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>
+</div>
